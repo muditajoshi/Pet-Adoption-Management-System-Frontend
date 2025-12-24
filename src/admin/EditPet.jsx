@@ -15,7 +15,7 @@ export default function EditPet() {
     const submit = async (e) => {
         e.preventDefault();
         await api.put(`/api/pet/${id}`, pet);
-        window.location.href = "/api/admin/pets";
+        window.location.href = "/admin/pets";
     };
 
     if (!pet) return null;

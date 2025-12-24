@@ -24,7 +24,7 @@ export default function AdminPets() {
         <h3>Manage Pets</h3>
         <button
           className="btn btn-primary"
-          onClick={() => navigate("/api/admin/pets/add")}
+          onClick={() => navigate("/admin/pets/add")}
         >
           + Add Pet
         </button>
@@ -50,7 +50,7 @@ export default function AdminPets() {
                 <button
                   className="btn btn-sm btn-warning me-2"
                   onClick={() =>
-                    navigate(`/api/admin/pets/edit/${pet._id}`)
+                    navigate(`/admin/pets/edit/${pet._id}`)
                   }
                 >
                   Edit
