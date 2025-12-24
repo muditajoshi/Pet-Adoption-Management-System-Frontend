@@ -7,11 +7,11 @@ export default function AdminApplications() {
   const [apps, setApps] = useState([]);
 
   useEffect(() => {
-    api.get("/adoption").then((res) => setApps(res.data));
+    api.get("/api/adoption").then((res) => setApps(res.data));
   }, []);
 
   const update = (id, status) => {
-    api.put(`/adoption/${id}`, { status }).then(() => {
+    api.put(`/api/adoption/${id}`, { status }).then(() => {
       setApps((prev) =>
         prev.map((a) => (a._id === id ? { ...a, status } : a))
       );

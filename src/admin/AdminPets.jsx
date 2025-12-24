@@ -9,12 +9,12 @@ export default function AdminPets() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    api.get("/pet").then((res) => setPets(res.data));
+    api.get("/api/pet").then((res) => setPets(res.data));
   }, []);
 
   const deletePet = async (id) => {
     if (!window.confirm("Delete this pet?")) return;
-    await api.delete(`/pet/${id}`);
+    await api.delete(`/api/pet/${id}`);
     setPets(pets.filter((p) => p._id !== id));
   };
 
@@ -24,7 +24,7 @@ export default function AdminPets() {
         <h3>Manage Pets</h3>
         <button
           className="btn btn-primary"
-          onClick={() => navigate("/admin/pets/add")}
+          onClick={() => navigate("/api/admin/pets/add")}
         >
           + Add Pet
         </button>
@@ -50,7 +50,7 @@ export default function AdminPets() {
                 <button
                   className="btn btn-sm btn-warning me-2"
                   onClick={() =>
-                    navigate(`/admin/pets/edit/${pet._id}`)
+                    navigate(`/api/admin/pets/edit/${pet._id}`)
                   }
                 >
                   Edit

@@ -10,7 +10,7 @@ export default function PetDetails() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    api.get(`/pet/${id}`).then((res) => setPet(res.data));
+    api.get(`/api/pet/${id}`).then((res) => setPet(res.data));
   }, [id]);
 
   const applyForAdoption = async () => {
@@ -22,7 +22,7 @@ export default function PetDetails() {
     }
 
     try {
-      await api.post("/adoption", { petId: id });
+      await api.post("/api/adoption", { petId: id });
       alert("Adoption request submitted");
       navigate("/my-applications");
     } catch (err) {

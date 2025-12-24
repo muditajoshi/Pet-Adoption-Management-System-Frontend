@@ -14,7 +14,7 @@ export default function MyApplications() {
       return;
     }
 
-    api.get("/adoption/applies").then((res) => setApps(res.data));
+    api.get("/api/adoption/applies").then((res) => setApps(res.data));
   }, [navigate]);
 
   return (

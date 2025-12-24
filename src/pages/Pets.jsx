@@ -8,7 +8,7 @@ export default function Pets() {
   const [pets, setPets] = useState([]);
 
   useEffect(() => {
-    api.get("/pet").then((res) => {
+    api.get("/api/pet").then((res) => {
       console.log(res)
       setPets(res.data)
     });

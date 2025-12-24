@@ -15,7 +15,7 @@ export default function AddPet() {
 
   const submit = async (e) => {
     e.preventDefault();
-    await api.post("/pet", pet);
+    await api.post("/api/pet", pet);
     window.location.href = "/admin/pets";
   };
 

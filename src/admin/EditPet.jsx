@@ -9,13 +9,13 @@ export default function EditPet() {
     const [pet, setPet] = useState(null);
 
     useEffect(() => {
-        api.get(`/pet/${id}`).then((res) => setPet(res.data));
+        api.get(`/api/pet/${id}`).then((res) => setPet(res.data));
     }, [id]);
 
     const submit = async (e) => {
         e.preventDefault();
-        await api.put(`/pet/${id}`, pet);
-        window.location.href = "/admin/pets";
+        await api.put(`/api/pet/${id}`, pet);
+        window.location.href = "/api/admin/pets";
     };
 
     if (!pet) return null;
